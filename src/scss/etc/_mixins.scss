@@ -1,0 +1,17 @@
+$breakpoints: (
+  'mobileS':   320px,
+  'mobileM':   375px,
+  'mobileL':   425px,
+  'tablet':    768px,
+  'laptop':    1024px,
+  'laptopL':   1440px,
+  'laptop4k':  2560px
+);
+
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}

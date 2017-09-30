@@ -1,0 +1,10 @@
+.wrapper {
+	width: 80%;
+	margin: auto;
+	@include respond(laptopL) {
+		width: 90%;
+	};
+	@include respond(mobileL) {
+		width: 100%;
+	};
+}

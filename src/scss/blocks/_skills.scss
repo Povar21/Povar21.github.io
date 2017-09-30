@@ -1,0 +1,41 @@
+.skills {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		font-size: 1.2rem;
+		font-weight: bold;
+		list-style: none;
+		counter-reset: skillsCounter;
+		@include respond(laptop) {
+			font-size: 1.1rem;
+		} ;
+		@include respond(tablet) {
+			font-size: .9rem;
+		};
+		@include respond(mobileL) {
+			font-size: 1.1rem;
+			flex-direction: column;
+		};
+
+		& li:before {
+			counter-increment: skillsCounter;
+			content: counter(skillsCounter);
+			margin-right: .6rem;
+			width: 2rem;
+			display: inline-block;
+			text-align: right;
+			color: $accentColor;
+			@include respond(laptop) {
+				width: 1rem;
+			};
+		}
+	}
+
+	&__item {
+		width: 50%;
+		@include respond(mobileL) {
+			width: 100%;
+		};
+	}
+}

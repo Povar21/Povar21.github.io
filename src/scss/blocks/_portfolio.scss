@@ -1,0 +1,42 @@
+.portfolio {
+	&__list {
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		@include respond(mobileL) {
+			flex-direction: column;
+		};
+	}
+
+	&__item {
+		@include respond(mobileL) {
+			margin: .5rem 0;
+		};
+	}
+
+	&__item-description {
+		font-size: 1.1rem;
+		display: block;
+		@include respond(laptop) {
+			font-size: 1rem;
+		};
+		@include respond(tablet) {
+			font-size: .9rem;
+		};
+	}
+
+	& a {
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-decoration: none;
+		@include respond(laptop) {
+			font-size: 1.2rem;
+		};
+		@include respond(tablet) {
+			font-size: 1rem;
+		};
+		@include respond(mobileL) {
+			font-size: 1.2rem;
+		};
+	}
+}
